@@ -7,7 +7,7 @@ import dateutil.parser
 import numpy as np
 from matplotlib import pyplot as plt
 
-API_KEY = '8e2c29370d674ab1a4e154cb42636473'
+API_KEY = '4182ed52673d404ea2b0a9187f258c0c'
 
 BEGIN_DATE = date.today()- timedelta(30)
 BEGIN = BEGIN_DATE.strftime('%Y-%m-%d')
