@@ -3,10 +3,22 @@ import pandas as pd
 import math
 
 def getNews(api_key,keyword,begin_date,end_date):
+
+    SOURCES = 'the-wall-street-journal,' \
+               'bloomberg,' \
+              # 'business-insider,' \
+              # 'fortune'
+
+    DOMAINS = 'wsj.com,' \
+              'bloomberg.com,' \
+              # 'businessinsider.com,' \
+              # 'fortune.com'
+
     newsapi = NewsApiClient(api_key=api_key)
+
     all_articles = newsapi.get_everything(q=keyword,
-                                          sources='the-wall-street-journal',#,bloomberg',#,business-insider,fortune',
-                                          domains='wsj.com',#,bloomberg.com',#,businessinsider.com,fortune.com',
+                                          sources= SOURCES,
+                                          domains= DOMAINS,
                                           from_param=begin_date,
                                           to=end_date,
                                           language='en',
@@ -18,8 +30,8 @@ def getNews(api_key,keyword,begin_date,end_date):
     if numPages > 1:
            for i in range(2,min(5+1,numPages+1)):#currently only support 5 pages due to free account
                   temp_articles = newsapi.get_everything(q=keyword,
-                                                 sources='the-wall-street-journal',#,bloomberg',#,business-insider,fortune',
-                                                 domains='wsj.com',#,bloomberg.com',#,businessinsider.com,fortune.com',
+                                                 sources=SOURCES,
+                                                 domains=DOMAINS,
                                                  from_param=begin_date,
                                                  to=end_date,
                                                  language='en',
