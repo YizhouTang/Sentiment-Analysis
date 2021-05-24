@@ -1,5 +1,5 @@
 import pandas as pd
-#import nltk
+import nltk
 from nltk.sentiment.vader import SentimentIntensityAnalyzer
 from get_news_data import getNews
 from datetime import date,timedelta
@@ -13,7 +13,7 @@ import streamlit as st
 # API_KEY = 'ced42af865c5482aa78652be689b4af0'
 # KEYWORD = 'doge'
 
-
+nltk.download('vader_lexicon') #only run this once
 def preprocess(API_KEY,KEYWORD,TICKER):
     yf_ticker = yf.Ticker(TICKER)
     hist = yf_ticker.history(period = '1mo')
@@ -24,7 +24,7 @@ def preprocess(API_KEY,KEYWORD,TICKER):
     END = date.today().strftime('%Y-%m-%d')
 
 
-    #nltk.download('vader_lexicon') #only run this once
+
 
     df = getNews(API_KEY,KEYWORD,BEGIN,END)
     df['count'] = 1
