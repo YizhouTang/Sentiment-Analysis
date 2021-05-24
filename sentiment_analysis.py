@@ -9,10 +9,6 @@ from matplotlib import pyplot as plt
 import yfinance as yf
 import streamlit as st
 
-# TICKER = 'SPY'
-# API_KEY = 'ced42af865c5482aa78652be689b4af0'
-# KEYWORD = 'doge'
-
 nltk.download('vader_lexicon') #only run this once
 def preprocess(API_KEY,KEYWORD,TICKER):
     yf_ticker = yf.Ticker(TICKER)

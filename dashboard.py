@@ -7,7 +7,8 @@ st.write("#### Last update: 2021-05-23")
 st.write("### Given keyword(s) from user input, this app pulls the latest related articles, assigns a sentiment score for each article based on the title/descriptions, and then generates a time series of sentiment scores for analysis purposes.")
 
 
-API_KEY = st.text_input("Please enter your API key:", '4182ed52673d404ea2b0a9187f258c0c')
+#API_KEY = st.text_input("Please enter your API key:", '4182ed52673d404ea2b0a9187f258c0c')
+API_KEY = '4182ed52673d404ea2b0a9187f258c0c'
 KEYWORD = st.text_input("Keywords for sentiment analysis:","dogecoin")
 TICKER =  st.text_input("Please enter a ticker:","DOGE-USD")
 
