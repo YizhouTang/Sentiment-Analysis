@@ -5,3 +5,5 @@ numpy~=1.19.2
 yfinance~=0.1.59
 nltk~=3.5
 matplotlib~=3.2.2
+newsapi-python==0.2.6
+nltk==3.5
